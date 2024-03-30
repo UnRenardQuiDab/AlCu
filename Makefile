@@ -6,7 +6,7 @@
 #    By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 10:58:29 by bwisniew          #+#    #+#              #
-#    Updated: 2024/03/30 14:34:02 by bwisniew         ###   ########.fr        #
+#    Updated: 2024/03/30 16:37:10 by bwisniew         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ SRCS =	main.c					\
 		print.c					\
 		vector.c				\
 		input.c					\
-		error.c
+		error.c					\
+		algo.c					\
+		routine.c
 
 OUTDIR = obj
 
