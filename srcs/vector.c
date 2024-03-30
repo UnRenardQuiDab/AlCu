@@ -6,7 +6,7 @@
 /*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 11:26:02 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/30 11:41:54 by bwisniew         ###   ########.fr       */
+/*   Updated: 2024/03/30 12:22:33 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	vector_realoc(t_vector *vector)
 			free(vector->tab);
 		return (1);
 	}
-	ft_memcpy(new_tab, vector->tab, vector->len);
+	ft_memcpy(new_tab, vector->tab, vector->len * sizeof(int));
 	if (vector->tab)
 		free(vector->tab);
 	vector->tab = new_tab;
