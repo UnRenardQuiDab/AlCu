@@ -15,7 +15,7 @@
 
 #include "vector.h"
 
-void    parsing(t_vector *tab);
+int    parsing(t_vector *s_tab, int ac, char **av);
 int     ft_atoi(const char *str);
 char	*get_next_line(int fd);
 void	print_tab(t_vector *vector);
