@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alcu.h                                             :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsariogl <fsariogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/30 10:56:47 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/30 12:28:03 by bwisniew         ###   ########.fr       */
+/*   Created: 2024/03/30 12:22:18 by fsariogl          #+#    #+#             */
+/*   Updated: 2024/03/30 12:48:36 by fsariogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALCU_H
-# define ALCU_H
+#include "../includes/vector.h"
+#include "../includes/alcu.h"
 
-#include "vector.h"
-
-void    parsing(t_vector *tab);
-int     ft_atoi(const char *str);
-char	*get_next_line(int fd);
-void	print_tab(t_vector *vector);
-
-#endif
+void    parsing(t_vector *tab)
+{
+	tab->len = 1;
+}

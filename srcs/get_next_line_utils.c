@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alcu.h                                             :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsariogl <fsariogl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fsariogl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/30 10:56:47 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/30 12:28:03 by bwisniew         ###   ########.fr       */
+/*   Created: 2021/12/05 20:04:41 by fsariogl          #+#    #+#             */
+/*   Updated: 2021/12/10 16:06:07 by fsariogl         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALCU_H
-# define ALCU_H
+#include "get_next_line.h"
 
-#include "vector.h"
+int	ft_strlennl(char *str, int nb)
+{
+	int	i;
 
-void    parsing(t_vector *tab);
-int     ft_atoi(const char *str);
-char	*get_next_line(int fd);
-void	print_tab(t_vector *vector);
-
-#endif
+	i = 0;
+	if (nb == 0)
+	{
+		while (str[i] != '\0')
+			i++;
+		return (i);
+	}
+	else
+	{
+		while (str[i] != '\0' && str[i] != '\n')
+			i++;
+		return (i);
+	}
+	return (-1);
+}
