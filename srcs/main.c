@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsariogl <fsariogl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:56:35 by bwisniew          #+#    #+#             */
 /*   Updated: 2024/03/30 14:37:01 by fsariogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/vector.h"
-#include "../includes/alcu.h"
+#include "vector.h"
+#include "alcu.h"
 #include <stdio.h>
 
 int	main(int ac, char **av)

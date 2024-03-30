@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alcu.h                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/30 10:56:47 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/30 14:26:59 by bwisniew         ###   ########.fr       */
+/*   Created: 2024/03/30 12:46:48 by bwisniew          #+#    #+#             */
+/*   Updated: 2024/03/30 14:18:22 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALCU_H
-# define ALCU_H
+#include <unistd.h>
 
-#include "vector.h"
+void	ft_error(char *err)
+{
+	size_t	i;
 
-int    parsing(t_vector *s_tab, int ac, char **av);
-int     ft_atoi(const char *str);
-char	*get_next_line(int fd);
-void	print_tab(t_vector *vector);
-void	ft_error(char *err);
-int		get_user_input(int max);
-
-#endif
+	i = 0;
+	while (err[i])
+		i++;
+	write(2, err, i);
+}
