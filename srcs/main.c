@@ -6,7 +6,7 @@
 /*   By: fsariogl <fsariogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:56:35 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/30 12:35:06 by fsariogl         ###   ########.fr       */
+/*   Updated: 2024/03/30 14:37:01 by fsariogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 #include "../includes/alcu.h"
 #include <stdio.h>
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	t_vector tab;
+	t_vector s_tab;
 
-	tab.len = 0;
-	parsing(&tab);
-	printf("%zu\n", tab.len);
+	if (parsing(&s_tab, ac, av) == 0)
+		return (-1);
 	return (0);
 }
