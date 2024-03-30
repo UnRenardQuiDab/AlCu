@@ -1,3 +1,4 @@
 Alcu
 *.o
 *.d
+.vscode
