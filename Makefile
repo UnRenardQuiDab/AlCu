@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fsariogl <fsariogl@student.42.fr>          +#+  +:+       +#+         #
+#    By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 10:58:29 by bwisniew          #+#    #+#              #
-#    Updated: 2024/03/30 12:16:55 by bwisniew         ###   ########.fr        #
+#    Updated: 2024/03/30 14:34:02 by bwisniew         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,10 @@ SRCS =	main.c					\
 		ft_atoi.c				\
 		get_next_line.c			\
 		get_next_line_utils.c	\
-    print.c               \
-    vector.c              \
+		print.c					\
+		vector.c				\
+		input.c					\
+		error.c
 
 OUTDIR = obj
 
@@ -32,7 +34,7 @@ DEP = $(OBJ:%.o=%.d)
 
 INCLUDE = includes
 
-NAME = Alcu
+NAME = alum1
 
 all: $(NAME)
 

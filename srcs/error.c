@@ -6,13 +6,13 @@
 /*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:46:48 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/30 12:48:41 by bwisniew         ###   ########.fr       */
+/*   Updated: 2024/03/30 14:18:22 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "unistd.h"
+#include <unistd.h>
 
-void	error(char *err)
+void	ft_error(char *err)
 {
 	size_t	i;
 
