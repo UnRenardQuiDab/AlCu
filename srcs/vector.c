@@ -6,7 +6,7 @@
 /*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 11:26:02 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/30 12:22:33 by bwisniew         ###   ########.fr       */
+/*   Updated: 2024/03/30 12:30:44 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int	vector_add(t_vector *vector, int value)
 	if (vector->len == vector->memory)
 		if (vector_realoc(vector))
 			return (1);
+	if (value > vector->max)
+		vector->max = value;
 	vector->tab[vector->len] = value;
 	vector->len++;
 	return (0);
@@ -65,6 +67,7 @@ int	vector_add(t_vector *vector, int value)
 void	vector_init(t_vector *vector)
 {
 	vector->len = 0;
+	vector->max = 0;
 	vector->memory = 0;
 	vector->tab = NULL;
 }
