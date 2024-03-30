@@ -6,7 +6,7 @@
 #    By: fsariogl <fsariogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 10:58:29 by bwisniew          #+#    #+#              #
-#    Updated: 2024/03/30 12:44:50 by fsariogl         ###   ########.fr        #
+#    Updated: 2024/03/30 12:16:55 by bwisniew         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRCS =	main.c					\
 		ft_atoi.c				\
 		get_next_line.c			\
 		get_next_line_utils.c	\
+    print.c               \
+    vector.c              \
 
 OUTDIR = obj
 
