@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: fsariogl <fsariogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 10:58:29 by bwisniew          #+#    #+#              #
-#    Updated: 2024/03/30 11:01:06 by bwisniew         ###   ########.fr        #
+#    Updated: 2024/03/30 12:44:50 by fsariogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,11 @@ C_FLAGS = -g3 -Wall -Wextra -Werror -MMD -MP
 
 SRCS_DIR = srcs
 
-SRCS =	main.c
+SRCS =	main.c					\
+		parsing.c				\
+		ft_atoi.c				\
+		get_next_line.c			\
+		get_next_line_utils.c	\
 
 OUTDIR = obj
 
