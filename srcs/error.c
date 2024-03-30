@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alcu.h                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsariogl <fsariogl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/30 10:56:47 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/30 12:48:48 by bwisniew         ###   ########.fr       */
+/*   Created: 2024/03/30 12:46:48 by bwisniew          #+#    #+#             */
+/*   Updated: 2024/03/30 12:48:41 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ALCU_H
-# define ALCU_H
+#include "unistd.h"
 
-#include "vector.h"
+void	error(char *err)
+{
+	size_t	i;
 
-void    parsing(t_vector *tab);
-int     ft_atoi(const char *str);
-char	*get_next_line(int fd);
-void	print_tab(t_vector *vector);
-void	error(char *err);
-
-#endif
+	i = 0;
+	while (err[i])
+		i++;
+	write(2, err, i);
+}
