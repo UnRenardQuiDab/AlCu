@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: fsariogl <fsariogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 13:52:20 by fsariogl          #+#    #+#             */
-/*   Updated: 2024/03/30 14:07:35 by bwisniew         ###   ########.fr       */
+/*   Updated: 2024/03/31 14:38:57 by fsariogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ char	*get_next_line(int fd)
 		if (buff[i] != '\n')
 		{
 			j = read(fd, buff, BUFFER_SIZE);
+			if (j < 0)
+				return (NULL);
 			buff[j] = '\0';
 			str = ft_strjoin(str, buff);
 		}
