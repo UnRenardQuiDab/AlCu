@@ -1,32 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/30 10:56:35 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/31 13:31:19 by bwisniew         ###   ########.fr       */
+/*   Created: 2024/03/30 11:46:54 by bwisniew          #+#    #+#             */
+/*   Updated: 2024/03/30 18:49:32 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
-#include "alcu.h"
-#include <stdlib.h>
+#include <unistd.h>
 
-int	main(int ac, char **av)
+void	print_line(int value, int max)
 {
-	t_alcu	alcu;
+	int	i;
 
-	if (parsing(&alcu.board, ac, av) == -1)
-		return (-1);
-	if (init_need_win(&alcu) == -1)
+	i = 0;
+	while (i < max - value)
 	{
-		vector_free(&alcu.board);
-		return (-1);
+		write(1, " ", 1);
+		i++;
 	}
-	routine(&alcu);
-	vector_free(&alcu.board);
-	free(alcu.need_win);
-	return (0);
+	i = 0;
+	while (i < value)
+	{
+		write(1, " |", 2);
+		i++;
+	}
+	write(1, "\n", 1);
+}
+
+void	print_tab(t_vector *vector)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < vector->len)
+	{
+		if (vector->tab[i] > 0)
+			print_line(vector->tab[i], vector->max);
+		i++;
+	}
 }

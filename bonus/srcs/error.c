@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/30 10:56:35 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/31 13:31:19 by bwisniew         ###   ########.fr       */
+/*   Created: 2024/03/30 12:46:48 by bwisniew          #+#    #+#             */
+/*   Updated: 2024/03/30 14:18:22 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
-#include "alcu.h"
-#include <stdlib.h>
+#include <unistd.h>
 
-int	main(int ac, char **av)
+void	ft_error(char *err)
 {
-	t_alcu	alcu;
+	size_t	i;
 
-	if (parsing(&alcu.board, ac, av) == -1)
-		return (-1);
-	if (init_need_win(&alcu) == -1)
-	{
-		vector_free(&alcu.board);
-		return (-1);
-	}
-	routine(&alcu);
-	vector_free(&alcu.board);
-	free(alcu.need_win);
-	return (0);
+	i = 0;
+	while (err[i])
+		i++;
+	write(2, err, i);
 }

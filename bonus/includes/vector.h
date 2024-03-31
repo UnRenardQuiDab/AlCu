@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   vector.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/30 10:56:35 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/31 13:31:19 by bwisniew         ###   ########.fr       */
+/*   Created: 2024/03/30 11:22:04 by bwisniew          #+#    #+#             */
+/*   Updated: 2024/03/30 12:28:53 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
-#include "alcu.h"
-#include <stdlib.h>
+#ifndef VECTOR_H
+# define VECTOR_H
 
-int	main(int ac, char **av)
+# include <unistd.h>
+
+# define START_SIZE 4
+
+typedef struct s_vector
 {
-	t_alcu	alcu;
+	int		*tab;
+	size_t	len;
+	size_t	memory;
+	int		max;
+}	t_vector;
 
-	if (parsing(&alcu.board, ac, av) == -1)
-		return (-1);
-	if (init_need_win(&alcu) == -1)
-	{
-		vector_free(&alcu.board);
-		return (-1);
-	}
-	routine(&alcu);
-	vector_free(&alcu.board);
-	free(alcu.need_win);
-	return (0);
-}
+int		vector_add(t_vector *vector, int value);
+void	vector_free(t_vector *vector);
+void	vector_init(t_vector *vector);
+
+#endif
