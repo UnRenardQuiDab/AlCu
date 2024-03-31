@@ -6,19 +6,24 @@
 /*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:56:35 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/30 14:37:01 by fsariogl         ###   ########.fr       */
+/*   Updated: 2024/03/31 11:23:39 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 #include "alcu.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 int	main(int ac, char **av)
 {
-	t_vector s_tab;
+	t_alcu	alcu;
 
-	if (parsing(&s_tab, ac, av) == 0)
+	if (parsing(&alcu.board, ac, av) == -1)
 		return (-1);
+	if (init_need_win(&alcu) == -1)
+		return (-1);
+	routine(&alcu);
+	vector_free(&alcu.board);
+	free(alcu.need_win);
 	return (0);
 }
