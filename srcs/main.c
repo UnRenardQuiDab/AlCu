@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: fsariogl <fsariogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:56:35 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/31 11:23:39 by bwisniew         ###   ########.fr       */
+/*   Updated: 2024/03/31 16:15:37 by fsariogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int	main(int ac, char **av)
 	routine(&alcu);
 	vector_free(&alcu.board);
 	free(alcu.need_win);
+	close(alcu.board.fd);
 	return (0);
 }
