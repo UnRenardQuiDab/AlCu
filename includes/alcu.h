@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alcu.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: fsariogl <fsariogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:56:47 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/31 11:56:05 by bwisniew         ###   ########.fr       */
+/*   Updated: 2024/03/31 15:31:09 by fsariogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*get_next_line(int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	print_tab(t_vector *vector);
 void	ft_error(char *err);
-int		get_user_input(int max);
+int		get_user_input(int max, int fd);
 int		init_need_win(t_alcu *alcu);
 int		get_loose(int value);
 int		get_win(int value);

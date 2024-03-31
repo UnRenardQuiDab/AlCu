@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: fsariogl <fsariogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 16:22:09 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/31 12:04:48 by bwisniew         ###   ########.fr       */
+/*   Updated: 2024/03/31 16:54:07 by fsariogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "alcu.h"
 #include <stdio.h>
+#include <fcntl.h>
 
 int	get_ai_play(t_alcu *alcu)
 {
@@ -40,12 +41,18 @@ void	routine(t_alcu *alcu)
 	bool	user_play;
 
 	user_play = false;
+	alcu->board.fd = open("/dev/tty", O_RDONLY);
+	if (alcu->board.fd < 0)
+	{
+		ft_error("ERROR\n");
+		return ;
+	}
 	while (alcu->board.tab[0] > 0)
 	{
 		print_tab(&alcu->board);
 		if (user_play)
 		{
-			remove_nb = get_user_input(alcu->board.tab[alcu->pos]);
+			remove_nb = get_user_input(alcu->board.tab[alcu->pos], alcu->board.fd);
 			if (remove_nb == -1)
 				return ;
 		}
