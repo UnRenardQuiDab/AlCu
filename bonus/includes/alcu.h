@@ -6,7 +6,7 @@
 /*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:56:47 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/31 19:06:21 by bwisniew         ###   ########.fr       */
+/*   Updated: 2024/03/31 20:01:09 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ int		get_user_input(int max);
 int		init_need_win(t_alcu *alcu);
 int		get_loose(int value);
 int		get_win(int value);
-void	routine(t_alcu *alcu);
 
 void	put_4_pixel(t_img *img, int x, int y, int color);
 void	put_pixel(t_img *img, int x, int y, unsigned int color);

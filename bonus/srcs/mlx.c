@@ -6,7 +6,7 @@
 /*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 14:07:22 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/31 19:24:04 by bwisniew         ###   ########.fr       */
+/*   Updated: 2024/03/31 20:22:09 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,8 @@
 void	mlx_hooks(t_mlx *data)
 {
 	mlx_loop_hook(data->mlx, display, data);
-	// mlx_hook(data->win, ButtonPress, ButtonPressMask, button_hook, data);
-	// mlx_hook(data->win, ButtonRelease, ButtonReleaseMask, release_hook, data);
 	mlx_hook(data->win, DestroyNotify, NoEventMask, mlx_loop_end, data->mlx);
-	// mlx_hook(data->win, KeyRelease, KeyReleaseMask, keyrelease_hook, data);
 	mlx_hook(data->win, KeyPress, KeyPressMask, keypress_hook, data);
-	// mlx_hook(data->win, MotionNotify, PointerMotionMask, mouse_hook, data);
 }
 
 void	put_4_pixel(t_img *img, int x, int y, int color)
