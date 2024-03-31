@@ -6,22 +6,23 @@
 /*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 15:54:02 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/30 19:30:26 by bwisniew         ###   ########.fr       */
+/*   Updated: 2024/03/31 12:01:57 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "alcu.h"
 #include <stdbool.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 bool	start_is_win(int value)
 {
-	return ((value - 1) % 4);
+	return ((value - 1) % 4 != 0);
 }
 
 bool	start_is_loose(int value)
 {
-	return ((value % 4) == 0);
+	return ((value % 4) != 0);
 }
 
 int	get_win(int value)
@@ -48,17 +49,29 @@ int	init_need_win(t_alcu *alcu)
 {
 	size_t	i;
 
-	vector_init(&alcu->need_win);
-	vector_add(&alcu->need_win, true);
-	printf("1");
+	alcu->need_win = malloc(alcu->board.len * sizeof(bool));
+	if (!alcu->need_win)
+		return (1);
+	alcu->need_win[0] = true;
 	alcu->pos = alcu->board.len - 1;
 	i = 1;
 	while (i < alcu->board.len)
 	{
-		if ()
-		{}
+		if (alcu->need_win[i - 1] == true)
+		{
+			if (start_is_win(alcu->board.tab[i - 1]) == 0)
+				alcu->need_win[i] = false;
+			else
+				alcu->need_win[i] = true;
+		}
+		else if (alcu->need_win[i - 1] == false)
+		{
+			if (start_is_loose(alcu->board.tab[i - 1]) == 0)
+				alcu->need_win[i] = false;
+			else
+				alcu->need_win[i] = true;
+		}
 		i++;
 	}
-	printf("\n");
 	return (0);
 }

@@ -6,34 +6,12 @@
 /*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:39:43 by bwisniew          #+#    #+#             */
-/*   Updated: 2024/03/30 17:38:40 by bwisniew         ###   ########.fr       */
+/*   Updated: 2024/03/31 11:55:15 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "alcu.h"
 #include <stdlib.h>
-
-int	ft_putchar_fd(char c, int fd)
-{
-	return (write(fd, &c, 1));
-}
-
-void	ft_putnbr_fd(int n, int fd)
-{
-	if (n < 0)
-		ft_putchar_fd('-', fd);
-	if (n > 9 || n < -9)
-	{
-		if (n < 0)
-			ft_putnbr_fd(-(n / 10), fd);
-		else
-			ft_putnbr_fd(n / 10, fd);
-	}
-	if (n < 0)
-		ft_putchar_fd(-(n % 10) + 48, fd);
-	else
-		ft_putchar_fd((n % 10) + 48, fd);
-}
 
 int	valid_input(char *input, int max)
 {

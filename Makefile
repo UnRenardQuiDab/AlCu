@@ -6,7 +6,7 @@
 #    By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 10:58:29 by bwisniew          #+#    #+#              #
-#    Updated: 2024/03/30 16:37:10 by bwisniew         ###   ########.fr        #
+#    Updated: 2024/03/31 11:55:36 by bwisniew         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS_DIR = srcs
 
 SRCS =	main.c					\
 		parsing.c				\
-		ft_atoi.c				\
+		ft_utils.c				\
 		get_next_line.c			\
 		get_next_line_utils.c	\
 		print.c					\

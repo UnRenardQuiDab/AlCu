@@ -1,14 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsariogl <fsariogl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bwisniew <bwisniew@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:40:52 by fsariogl          #+#    #+#             */
-/*   Updated: 2024/03/30 12:41:00 by fsariogl         ###   ########.fr       */
+/*   Updated: 2024/03/31 12:01:49 by bwisniew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
+
+int	ft_putchar_fd(char c, int fd)
+{
+	return (write(fd, &c, 1));
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n < 0)
+		ft_putchar_fd('-', fd);
+	if (n > 9 || n < -9)
+	{
+		if (n < 0)
+			ft_putnbr_fd(-(n / 10), fd);
+		else
+			ft_putnbr_fd(n / 10, fd);
+	}
+	if (n < 0)
+		ft_putchar_fd(-(n % 10) + 48, fd);
+	else
+		ft_putchar_fd((n % 10) + 48, fd);
+}
 
 static int	ft_check_minmax(long long nb, int signe)
 {
